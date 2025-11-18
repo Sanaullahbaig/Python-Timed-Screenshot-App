@@ -5,14 +5,11 @@ import threading
 import time
 import os
 
-
 CAPTURE_INTERVAL = 600 
-
 
 is_capturing = False 
 save_directory = None
 status_text = None
-
 
 def select_folder():
     global save_directory
@@ -76,8 +73,6 @@ def capture_worker():
 
         time.sleep(CAPTURE_INTERVAL)
 
-
-
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Simple Auto Screenshot Utility")
@@ -110,5 +105,6 @@ if __name__ == "__main__":
     stop_btn.pack(side=tk.LEFT, padx=10)
 
     tk.Label(root, textvariable=status_text, bg="#F8F8F8", font=("Arial", 10)).pack(pady=(5, 20))
+
 
     root.mainloop()
